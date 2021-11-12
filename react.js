@@ -232,3 +232,18 @@ client.on('messageReactionRemove', async (reaction, user) => {
 });
 
 client.login(config.token);
+
+require('http').createServer((req, res) => res.end('NAMASTE WORLD')).listen(2000)
+
+client.on("message", message => {
+    if (message.author.bot) return false;
+
+    if (message.content.includes("@here") || message.content.includes("@everyone")) return false;
+
+    if (message.mentions.has(client.user.id)) {
+        message.channel.send({embed: {
+          color: 3447003,
+          description: "**GET STARTED**\n**Put me above the role you want**\n\n**Help Command**\n\n**``rr!add <#channeL> <MESSAGEID> <ROLE> <EMOJI>\n\nrr!delete <MESSAGEID> <EMOJI>``**"
+          }});
+    };
+});
