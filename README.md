@@ -16,5 +16,5 @@ Please keep credits :>
 
 If you enjoyed it, Star the repository:
 
-https://github.com/ZeroDisc/Reaction-Role-bot
+https://github.com/ZeroDSC/Reaction-Role-bot
 
