@@ -34,8 +34,8 @@ darkcodes.reactions.cache.get(`${emojicheck.id}`).remove()
         .setAuthor(message.author.username, message.author.displayAvatarURL())
         .setDescription(`**Sucsses**
         Removed  **${msg} [Go To Message](https://discord.com/channels/${message.guild.id}/${channel}/${args[0]})**
-      ${attention} Reaciton Cleared 
-      ${attention} Reaciton Role Removed.`)
+      ${attention} Reaction Cleared 
+      ${attention} Reaction Role Removed.`)
         .setFooter(message.guild.name , message.guild.iconURL())
         .setTimestamp()
         message.channel.send(embed)
@@ -56,8 +56,8 @@ client.channels.cache.get(channel).messages.fetch(args[0]).then(darkcodes => {
            .setAuthor(message.author.username, message.author.displayAvatarURL())
            .setDescription(`**Sucsses**
            Removed  **${msg} [Go To Message](https://discord.com/channels/${message.guild.id}/${channel}/${args[0]})**
-         ${attention} Reaciton Cleared 
-         ${attention} Reaciton Role Removed.`)
+         ${attention} Reaction Cleared 
+         ${attention} Reaction Role Removed.`)
            .setFooter(message.guild.name , message.guild.iconURL())
            .setTimestamp()
            message.channel.send(embed)
