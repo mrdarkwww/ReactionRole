@@ -10,7 +10,7 @@ module.exports = {
     //Start
     const embed = new MessageEmbed()
       .setColor("#3d8eff")
-      .setDescription(`[Add Reaction Role in your server](https://discord.com/oauth2/authorize?client_id=${client.userid}&scope=bot&permissions=8)`)
+      .setDescription(`[Add Reaction Role in your server](https://discord.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8)`)
 
     message.channel.send(embed);
 
