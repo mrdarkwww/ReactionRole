@@ -73,8 +73,9 @@ client.on('messageReactionAdd', async (reaction, user) => {
 		reaction.message.guild.members.fetch(user).then(member => {
 			let embed = new Discord.MessageEmbed()
 				.setAuthor(user.username, user.displayAvatarURL())
+				.setColor("#ff614f")
 				.setDescription(
-					`<:attention:756126867949617253> **It's Looks You Already Have ${
+					`<:warning:888603406493683712> **It's Looks You Already Have ${
 						reaction.message.guild.roles.cache.get(role).name
 					}** `
 				)
@@ -85,11 +86,12 @@ client.on('messageReactionAdd', async (reaction, user) => {
 				.setTimestamp();
 			if (member.roles.cache.has(role)) return user.send(embed);
 			let sucsses = new Discord.MessageEmbed()
-				.setAuthor(user.username, user.displayAvatarURL())
+				.setAuthor("Role Added")
+				.setColor("#3d8eff")
 				.setDescription(
-					`${emotfe.loading} **${
+					`You have got the **${
 						reaction.message.guild.roles.cache.get(role).name
-					}** Has Been added to you on ${reaction.message.guild.name}`
+					}** role by reacting in ${reaction.message.guild.name}`
 				)
 				.setFooter(
 					reaction.message.guild.name,
@@ -125,8 +127,9 @@ client.on('messageReactionAdd', async (reaction, user) => {
 		reaction.message.guild.members.fetch(user).then(member => {
 			let embed = new Discord.MessageEmbed()
 				.setAuthor(user.username, user.displayAvatarURL())
+				.setColor("#ff614f")
 				.setDescription(
-					`<:attention:756126867949617253> **It's Looks You Already Have ${
+					`<:warning:888603406493683712> **It's Looks You Already Have ${
 						reaction.message.guild.roles.cache.get(role).name
 					}** `
 				)
@@ -137,11 +140,12 @@ client.on('messageReactionAdd', async (reaction, user) => {
 				.setTimestamp();
 			if (member.roles.cache.has(role)) return user.send(embed);
 			let sucsses = new Discord.MessageEmbed()
-				.setAuthor(user.username, user.displayAvatarURL())
+				.setAuthor("Role Added")
+				.setColor("#3d8eff")
 				.setDescription(
-					`${emotfe.loading} **${
+					`You have got the **${
 						reaction.message.guild.roles.cache.get(role).name
-					}** Has Been added to you on ${reaction.message.guild.name}`
+					}** role by reacting in ${reaction.message.guild.name}`
 				)
 				.setFooter(
 					reaction.message.guild.name,
@@ -176,11 +180,12 @@ client.on('messageReactionRemove', async (reaction, user) => {
 	if (reaction.message.id == messageid && reaction.emoji.id == `${emote}`) {
 		reaction.message.guild.members.fetch(user).then(member => {
 			let embed = new Discord.MessageEmbed()
-				.setAuthor(user.username, user.displayAvatarURL())
+				.setAuthor("Role Removed")
+				.setColor("#ff614f")
 				.setDescription(
-					`${emotfe.attention} **${
+					`You have got the **${
 						reaction.message.guild.roles.cache.get(role).name
-					}** Role Removed From You!`
+					}** role removed by unreacting in ${reaction.message.guild.name}`
 				)
 				.setFooter(
 					reaction.message.guild.name,
@@ -214,11 +219,12 @@ client.on('messageReactionRemove', async (reaction, user) => {
 	if (reaction.message.id == messageid && reaction.emoji.name == `${emote}`) {
 		reaction.message.guild.members.fetch(user).then(member => {
 			let embed = new Discord.MessageEmbed()
-				.setAuthor(user.username, user.displayAvatarURL())
+				.setAuthor("Role Removed")
+				.setColor("#ff614f")
 				.setDescription(
-					`${emotfe.attention} **${
+					`You have got the **${
 						reaction.message.guild.roles.cache.get(role).name
-					}** Role Removed From You!`
+					}** role removed by unreacting in ${reaction.message.guild.name}`
 				)
 				.setFooter(
 					reaction.message.guild.name,
@@ -235,6 +241,7 @@ client.login(config.token);
 
 require('http').createServer((req, res) => res.end('NAMASTE WORLD')).listen(2000)
 
+
 client.on("message", message => {
     if (message.author.bot) return false;
 
@@ -243,7 +250,30 @@ client.on("message", message => {
     if (message.mentions.has(client.user.id)) {
         message.channel.send({embed: {
           color: 3447003,
-          description: "**GET STARTED**\n**Put me above the role you want**\n\n**Help Command**\n\n**``rr!add <#channeL> <MESSAGEID> <ROLE> <EMOJI>\n\nrr!delete <MESSAGEID> <EMOJI>``**"
+          description: "Too see my all commands use `rr!help`"
           }});
     };
+});
+
+client.on("ready", () => {
+  client.user.setStatus("online"); // You Can Set It To dnd, online, idle.
+});
+
+
+client.on("ready", () => {
+  client.user.setStatus("online");
+});
+
+
+client.on("ready", async () => {
+  console.log(`[--------------------- LOADED ---------------------]`)
+  const status = [
+    `in ${client.guilds.cache.size} Servers`,
+    `with ${client.users.cache.size} Users`,
+    `rr!help`,
+    `in dsc.gg/dailydanks`,
+  ]
+  setInterval(() => {
+    client.user.setActivity(status[Math.floor(Math.random() * status.length)], { type: "PLAYING" })//WATCHING // STREAMING / PLAYING
+  }, 3000)
 });
