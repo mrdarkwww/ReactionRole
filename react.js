@@ -85,7 +85,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
 				)
 				.setTimestamp();
 			if (member.roles.cache.has(role)) return user.send(embed);
-			let sucsses = new Discord.MessageEmbed()
+			let success = new Discord.MessageEmbed()
 				.setAuthor("Role Added")
 				.setColor("#3d8eff")
 				.setDescription(
@@ -100,7 +100,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
 				.setTimestamp();
 
 			member.roles.add(role);
-			return user.send(sucsses);
+			return user.send(success);
 		});
 	}
 });
@@ -139,7 +139,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
 				)
 				.setTimestamp();
 			if (member.roles.cache.has(role)) return user.send(embed);
-			let sucsses = new Discord.MessageEmbed()
+			let success = new Discord.MessageEmbed()
 				.setAuthor("Role Added")
 				.setColor("#3d8eff")
 				.setDescription(
@@ -154,7 +154,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
 				.setTimestamp();
 
 			member.roles.add(role);
-			return user.send(sucsses);
+			return user.send(success);
 		});
 	}
 });
