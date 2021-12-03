@@ -10,6 +10,8 @@ change the emojis at react.js
 
 Run : npm start
 
+Vscode : node react.js / node .
+
 Enjoy!
 
 Please keep credits :>
